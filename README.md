@@ -9,7 +9,7 @@ An original browser-based multiplayer geopolitical strategy game, inspired by th
 - Solo campaign against an AI rival that expands influence and develops industry
 - Country economies with treasury, population and recurring regional income
 - Buildable city districts, industrial complexes and trade ports
-- Online two-player rooms with server-authoritative actions and alternating turns
+- Online two-player rooms with server-authoritative actions, alternating coalition turns and four-player team rooms
 - Multiplayer lobby presence, room codes and disconnect cleanup
 - Campaign activity log, country intelligence and responsive command-centre interface
 
@@ -32,7 +32,7 @@ Deploy the `server` workspace as a persistent Node service and the `client` work
 1. Open the client and choose **ONLINE**.
 2. Create a room and share its six-character code.
 3. The other player joins using that code.
-4. The Blue and Red coalitions take alternating phases. Each phase has two actions; the server validates actions and broadcasts the shared state.
+4. Up to four commanders can join, with two players sharing each coalition. Blue and Red take alternating phases. Each coalition shares two actions per phase; the server validates actions and broadcasts the shared state.
 
 Rooms are currently held in server memory and reset when the server restarts or the room becomes empty. Persistent saves and reconnect recovery are future work.
 
