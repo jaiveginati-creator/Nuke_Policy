@@ -2,8 +2,8 @@
 
 An original browser-based multiplayer geopolitical strategy game, inspired by the broad genre of global territory and nation-management simulators.
 
-## Current build — 0.4.0
-- Geographic world map with **70 playable countries** across every major region
+## Current build — 0.5.0
+- Geographic world map with **71 playable countries** across every major region
 - Country ownership, connected-region influence and coalition control
 - Turn-based campaign with two strategic actions per phase
 - Solo campaign against an AI rival that expands influence and develops industry
