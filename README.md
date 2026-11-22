@@ -1,17 +1,19 @@
 # Nuke Policy
 
-A browser-based multiplayer geopolitical strategy game. This is an original implementation inspired by the broad genre of global strategy simulators.
+An original browser-based multiplayer geopolitical strategy game, inspired by the broad genre of global territory and nation-management simulators.
 
-## Current build — 0.2.0
-- Geographic world map using country boundaries from Natural Earth / world-atlas
-- 26 playable countries across the Americas, Europe, Africa, Asia and Oceania
-- Country selection, coalition ownership, connected-region influence and economic income
-- Local sandbox mode
-- Socket.IO room creation and joining for two-player online sessions
-- Server-authoritative country influence and turn progression
-- Responsive command-centre interface with country intelligence panel and campaign HUD
+## Current build — 0.4.0
+- Geographic world map with **70 playable countries** across every major region
+- Country ownership, connected-region influence and coalition control
+- Turn-based campaign with two strategic actions per phase
+- Solo campaign against an AI rival that expands influence and develops industry
+- Country economies with treasury, population and recurring regional income
+- Buildable city districts, industrial complexes and trade ports
+- Online two-player rooms with server-authoritative actions and alternating turns
+- Multiplayer lobby presence, room codes and disconnect cleanup
+- Campaign activity log, country intelligence and responsive command-centre interface
 
-The game uses fictional, abstract influence and economic systems. It does not model real-world weapons, targeting, or military procedures.
+All conflict-related mechanics are fictional and abstract. The game focuses on territory, economic development and diplomatic influence; it does not simulate real-world weapons or military procedures.
 
 ## Run locally
 Requires Node.js 20+.
@@ -24,19 +26,28 @@ npm run dev
 Client: http://localhost:5173  
 Server health: http://localhost:3001/health
 
-For deployment, host the `server` workspace as a Node service and the `client` workspace as a static Vite site. Set `VITE_SERVER_URL` to the public server URL before building the client.
+## Online multiplayer
+Deploy the `server` workspace as a persistent Node service and the `client` workspace as a static Vite site. Set `VITE_SERVER_URL` to the public server URL before building the client.
 
-## Multiplayer
-1. Start the deployed client and server.
-2. One player selects **ONLINE** and creates a room.
-3. Share the six-character room code with another player.
-4. The second player joins using that code. The server assigns the two coalition sides and keeps the shared game state authoritative.
+1. Open the client and choose **ONLINE**.
+2. Create a room and share its six-character code.
+3. The other player joins using that code.
+4. The Blue and Red coalitions take alternating phases. Each phase has two actions; the server validates actions and broadcasts the shared state.
 
-Rooms currently support two players and are held in server memory. They reset when the server restarts or the room becomes empty.
+Rooms are currently held in server memory and reset when the server restarts or the room becomes empty. Persistent saves and reconnect recovery are future work.
+
+## Current strategic systems
+- **Influence:** Extend your coalition into adjacent countries when you have sufficient influence and credits.
+- **City districts:** Spend credits to increase a country's recurring income.
+- **Industry:** Build industrial capacity for a larger income increase.
+- **Trade ports:** Add trade infrastructure and recurring income.
+- **Economy:** Owned countries contribute income at the end of their coalition phase.
+- **AI rival:** In solo mode, Red uses its actions to expand or invest in industry.
 
 ## Roadmap
-1. More robust lobby presence, player identity and reconnection
-2. Map selection and additional country sets
-3. Diplomacy, trade and alliances
-4. AI opponents and balanced scenarios
-5. Persistent profiles, match history and matchmaking
+1. More detailed territory subdivisions and zoom-level map presentation
+2. Stronger AI strategy and selectable difficulty
+3. Diplomacy, trade agreements, alliances and shared projects
+4. Match settings, spectator mode and larger multiplayer rooms
+5. Persistent accounts, saved campaigns and reconnection support
+6. Scenario editor and additional map configurations
