@@ -32,7 +32,7 @@ Deploy the `server` workspace as a persistent Node service and the `client` work
 1. Open the client and choose **ONLINE**.
 2. Create a room and share its six-character code.
 3. The other player joins using that code.
-4. Up to four commanders can join, with two players sharing each coalition. Blue and Red take alternating phases. Each coalition shares two actions per phase; the server validates actions and broadcasts the shared state.
+4. Up to four commanders can join, with two players sharing each coalition. Blue and Red take alternating phases. Each coalition shares two actions per phase, and both teammates must confirm before their phase ends. The server validates actions and broadcasts the shared state.
 
 Rooms are currently held in server memory and reset when the server restarts or the room becomes empty. Persistent saves and reconnect recovery are future work.
 
