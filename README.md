@@ -40,7 +40,7 @@ Rooms are currently held in server memory and reset when the server restarts or 
 - **Influence:** Extend your coalition into adjacent countries when you have sufficient influence and credits.
 - **City districts:** Spend credits to increase a country's recurring income.
 - **Industry:** Build industrial capacity for a larger income increase.
-- **Trade ports:** Add trade infrastructure and recurring income.
+- **Trade ports:** Add trade infrastructure and recurring income.\n- **Trade corridors:** Connect adjacent coalition countries for a recurring income bonus; the AI can build these too.
 - **Economy:** Owned countries contribute income at the end of their coalition phase.
 - **AI rival:** In solo mode, Red uses its actions to expand or invest in industry.
 
